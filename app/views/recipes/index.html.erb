@@ -1,7 +1,19 @@
 <h1>I Saw on The Internet</h1>
 
-<ul>
-  <% @recipes.each do |recipe| %>
-    <li><%= recipe%></li>
-  <% end %>
-</ul>
+<% @recipes.each do |recipe| %>
+   <article>
+      <header>
+        <h2><%= recipe.name %></h2>
+        <span>Calories: <%= recipe.calories %></span>
+        <span>Cost: <%= number_to_currency(recipe.cost)%></span>
+
+      </header>
+      <h3>Ingridients</h3>
+      <p><%= recipe.stuff %></p>
+      
+      <h3>Prepare Mode</h3>
+      <p><%= recipe.prepare_mode %></p>
+      
+   </article>
+<% end %>
+
