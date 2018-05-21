@@ -5,11 +5,7 @@
       <header>
         <h2><%= recipe.name %></h2>
         <p>
-          <% if recipe.calories < 100 %>
-            Light (<%= recipe.calories %> Calories)
-          <% else %>
-            <%= recipe.calories %> Calories
-          <% end %>
+          <%= calories_formater(recipe) %>
         </p>
         <span>Cost: <%= number_to_currency(recipe.cost)%></span>
 
