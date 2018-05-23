@@ -1,0 +1,30 @@
+<%= form_for(@recipe) do |f| %>
+  <div>
+    <%= f.label :Name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :Ingridients %>
+    <%= f.text_area :stuff, cols: 20, rows: 7 %>
+  </div>
+
+  <div>
+    <%= f.label :Calories %>
+    <%= f.number_field :calories %>
+  </div>
+
+  <div>
+    <%= f.label :Prepare_Mode %>
+    <%= f.text_area :prepare_mode, cols: 20, rows: 7 %>
+  </div>
+
+  <div>
+    <%= f.label :Cost %>
+    <%= f.number_field :cost %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

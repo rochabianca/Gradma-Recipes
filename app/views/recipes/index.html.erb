@@ -3,7 +3,7 @@
 <% @recipes.each do |recipe| %>
    <article>
       <header>
-        <h2><%= recipe.name %></h2>
+        <h2><%= link_to recipe.name, recipe %></h2>
         <p>
           <%= calories_formater(recipe) %>
         </p>
@@ -19,3 +19,4 @@
    </article>
 <% end %>
 
+<%= link_to "New Recipe", new_recipe_path %>
