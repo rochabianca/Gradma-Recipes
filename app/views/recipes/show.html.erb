@@ -1,6 +1,13 @@
 <header>
   <h1><%= @recipe.name %></h1>
+  <%= image(@recipe) %>
 </header>
+
+<div>
+  <%= @recipe.kind %>
+  <%= @recipe.duration.to_formatted_s(:time) %> min
+  <%= pluralize(@recipe.portion, 'portion', 'portions') %>
+</div>
 
 <h2>Ingridients</h2>
 <p>
@@ -20,3 +27,4 @@
 
 <%= link_to "Back to Recipes", recipes_path %>
 <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
+<%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete, data:{confirm: "Are you sure?"} %>

@@ -5,6 +5,26 @@
   </div>
 
   <div>
+    <%= f.label :Type %>
+    <%= f.text_field :kind %>
+  </div>
+
+  <div>
+    <%= f.label :Portions %>
+    <%= f.text_field :portion %>
+  </div>
+
+   <div>
+    <%= f.label :Time_To_Prepare %>
+    <%= f.time_select :duration %>
+  </div>
+
+  <div>
+    <%= f.label :Intro %>
+    <%= f.text_area :intro, cols: 20, rows: 7 %>
+  </div>
+
+  <div>
     <%= f.label :Ingridients %>
     <%= f.text_area :stuff, cols: 20, rows: 7 %>
   </div>
@@ -25,6 +45,12 @@
   </div>
 
   <div>
+    <%= f.label :Poster %>
+    <%= f.text_field :poster, placeholder: ".GIF, .JPEG ou .PNG" %>
+  </div>
+
+  <div>
     <%= f.submit %>
+    <%= link_to "Cancel", root_path %>
   </div>
 <% end %>

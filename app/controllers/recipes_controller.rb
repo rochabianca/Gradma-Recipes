@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.created_at
   end
 
   def show
@@ -13,8 +13,7 @@ class RecipesController < ApplicationController
 
   def update 
     @recipe = Recipe.find(params[:id])
-    params = recipe_params()
-    @recipe.update(params)
+    @recipe.update(recipe_params)
 
     redirect_to @recipe
   end
@@ -24,15 +23,20 @@ class RecipesController < ApplicationController
   end
 
   def create
-    params = recipe_params()
-    @recipe = Recipe.new(params)
+    @recipe = Recipe.new(recipe_params)
     @recipe.save!
     redirect_to @recipe
+  end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to recipes_url
   end
 
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :stuff, :calories, :prepare_mode, :cost)
+    params.require(:recipe).permit(:name, :stuff, :calories, :prepare_mode, :cost, :kind, :portion, :duration, :poster, :intro)
   end
 end
