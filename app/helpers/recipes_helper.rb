@@ -11,7 +11,7 @@ module RecipesHelper
     if recipe.poster.blank?
       image_tag('https://jis.gov.jm/media/blank.png')
     else
-      image_tag('recipe.poster')
+      image_tag(recipe.poster)
     end
   end
 end

@@ -1,4 +1,6 @@
 <%= form_for(@recipe) do |f| %>
+  <%= render 'layouts/errors' %>
+ 
   <div>
     <%= f.label :Name %>
     <%= f.text_field :name %>
@@ -6,7 +8,7 @@
 
   <div>
     <%= f.label :Type %>
-    <%= f.text_field :kind %>
+    <%= f.select :kind, Recipe::KIND, prompt: "Choose your option"  %>
   </div>
 
   <div>
