@@ -1,12 +1,12 @@
-<header>
-  <div>
+<header class="header">
+  <div class="header__logo">
     <%= link_to(root_path) do %>
-      <%= image_tag('https://cdn1.iconfinder.com/data/icons/food-drinks-set/24/Soup-512.png', size: '30', alt: 'Logo') %>
-      I Saw on The Internet
+      <%= image_tag 'logo.png', alt: 'Logo', class: "header__logo--image" %>
+      <span class="header__logo--name">Grandma's recipes</span>
     <% end %>
   </div>
   
-  <div>
+  <div class="header__item">
     <%= link_to "New Recipe", new_recipe_path %>
   </div>
 </header>

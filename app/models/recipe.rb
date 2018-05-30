@@ -3,7 +3,7 @@ class Recipe < ApplicationRecord
   validates_length_of :stuff, maximum: 300
   validates_length_of :prepare_mode, maximum: 600
   validates_numericality_of :calories, greater_than_or_equal_to: 0, presence:true
-  validates_format_of :poster, with: /\w+\.(gif|jpg|png|jpeg)\z/i, message: "use only gif, jpg, jpeg or png files."
+  validates_format_of :poster, allow_blank: true, with: /\w+\.(gif|jpg|png|jpeg)\z/i, message: "use only gif, jpg, jpeg or png files."
 
   KIND = %w(Desserts Side_Dishes Appetizers Drinks Breakfest_&_Brunch Family_Dinners Snaks Lunch)
   validates_inclusion_of :kind, in: KIND

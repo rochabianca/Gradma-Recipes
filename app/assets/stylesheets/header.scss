@@ -1,0 +1,36 @@
+@import 'variables';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background: $black;
+  border-bottom: 1px solid $light-gray;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  a {
+    color: $white;
+  }
+}
+
+.header__logo {
+  a {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.header__logo--image {
+  display: block;
+  width: 40px;
+}
+
+.header__logo--name {
+  margin-left: 10px;
+  font-size: 18px;
+}
