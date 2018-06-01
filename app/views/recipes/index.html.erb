@@ -1,24 +1,32 @@
-<h1>I Saw on The Internet</h1>
+<div class="owl-carousel owl-theme">
+  <div class="item"> <%= image_tag('desserts.png') %> </div>
+  <div class="item"> <%= image_tag('drinks.png') %> </div>
+  <div class="item"> <%= image_tag('snaks.png') %> </div>
+</div>
 
-<% @recipes.each do |recipe| %>
-   <article>
-      <header>
-        <h2><%= link_to recipe.name, recipe %></h2>
-          <%= image(recipe) %>
-        <div>
-          <%= calories_formater(recipe) %>
-          <%= recipe.duration.to_formatted_s(:time) %> min
-        </div>
-        <span>Cost: <%= number_to_currency(recipe.cost)%></span>
+<h1 class="title">Week's Menu</h1>
 
-      </header>
-      <h3>Ingridients</h3>
-      <p><%= truncate(recipe.stuff, length: 140) %></p>
-      
-      <h3>Prepare Mode</h3>
-      <p><%= recipe.prepare_mode %></p>
-      
-   </article>
-<% end %>
+<section>
+  <div>
+    <h2 class="title title__subtitle">Pasta</h2>
+    <% @recipes.where(kind: 'Pasta').each do |recipe| %>
+      <%= link_to(recipe) do %>
+        <h3><%= recipe.name %></h3>
+        <p><%= recipe.intro %></p>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div>
+    <h2 class="title title__subtitle">Desserts</h2>
+    <% @recipes.where(kind: 'Desserts').each do |recipe| %>
+      <%= link_to(recipe) do %>
+        <h3><%= recipe.name %></h3>
+        <p><%= recipe.intro %></p>
+      <% end %>
+    <% end %>
+  </div>
+</section>
+
 
 <%= link_to "New Recipe", new_recipe_path %>
