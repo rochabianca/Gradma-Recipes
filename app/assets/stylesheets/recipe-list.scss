@@ -1,0 +1,27 @@
+@import 'variables';
+
+.recipe-list {
+  text-align: right;
+  padding-right: 25px;
+  position: relative;
+
+  li {
+    display: block;
+    padding: 5px 0;
+  }
+}
+
+.recipe-list__name {
+  color: $light-gray;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.recipe-list__resume {
+  display: inline-block;
+  width: 400px;
+  
+  color: $dark-gray;
+  font-size: 15px;
+  line-height: 1.2;
+}
