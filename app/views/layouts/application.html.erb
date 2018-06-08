@@ -11,12 +11,9 @@
 
   <body>
     <%= render 'layouts/header'%>
-    <% if flash[:notice] %>
-      <div class="alert">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
+    <%= flash_messages %>
     <%= yield %>
     <%= render 'layouts/footer'%>
+    <script src="https://unpkg.com/ionicons@4.1.2/dist/ionicons.js"></script>
   </body>
 </html>

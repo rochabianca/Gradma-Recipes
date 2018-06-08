@@ -1,0 +1,18 @@
+<h1>Eu vou ser apagado assim que possivel</h1>
+<% if @recipe.comments.present? %>
+  <div>
+    <ul>
+      <% @comments.each do |comment| %>
+      <li>
+        <p><%= comment.name %></p>
+        <span><%= pluralize(comment.rating, 'Star', 'Stars')%></span>
+        <small><%= time_ago_in_words(comment.created_at) %> ago</small>
+        <p><%= comment.comment %></p>
+      </li>
+      <% end %>
+    </ul>
+    <%= link_to "Back to Recipes", @recipe%>
+  </div>
+<% else %>
+  <div>There is no comments yet</div>
+<% end %>

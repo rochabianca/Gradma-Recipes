@@ -23,8 +23,9 @@
 </p>
 
 <h3>Cost</h3>
-<p><%= @recipe.cost %></p>
+<p><%= number_to_currency(@recipe.cost) %></p>
 
 <%= link_to "Back to Recipes", recipes_path %>
 <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
 <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete, data:{confirm: "Are you sure?"} %>
+<%= link_to pluralize(@recipe.comments.length, 'Comment', 'Comments'), recipe_comments_path(@recipe) %>

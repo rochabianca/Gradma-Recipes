@@ -1,4 +1,5 @@
 class Recipe < ApplicationRecord
+  has_many :comments , dependent: :destroy
   validates :name, :stuff, :duration, :prepare_mode, presence:true
   validates_length_of :stuff, maximum: 300
   validates_length_of :prepare_mode, maximum: 600
